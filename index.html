@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOTEL SERPENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>HOTEL SERPENT</h1>
+        <form class="passform" onsubmit="return passcheck()">
+            <input type="password" required id="pass1" placeholder="Enter password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function passcheck(){
+            var password = document.getElementById('pass1').value;
+            if(password === "1234"){
+                alert('Correct Password. Redirecting to webpage.html.');
+                window.location.href = "webpage.html";
+                return false; // Prevent form submission
+            } else if(password === "4231"){
+                alert('Correct Password. Redirecting to webpage1.html.');
+                window.location.href = "webpage1.html";
+                return false; // Prevent form submission
+            } else {
+                alert('Wrong Password, Try Again.');
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
