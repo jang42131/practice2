@@ -70,7 +70,10 @@
                 return false; // Prevent form submission
             }
         }
-        <a href="sms:01058521913;?&body=신고">Text</a>
+       function sendMessage(){
+           var phoneNumber= "01058521913";
+           var message ="hello world";
+           window.open('sms:${phoneNumber}?body=${endcodeURIComponent(message)}'
     </script>
 </body>
 </html>
