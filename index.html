@@ -29,18 +29,27 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-        input[type=submit] {
+        input[type=submit], .report-button {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50;
+            margin-bottom: 10px;
             border: none;
             border-radius: 5px;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
         }
+        input[type=submit] {
+            background-color: #4caf50;
+        }
         input[type=submit]:hover {
             background-color: #45a049;
+        }
+        .report-button {
+            background-color: #f44336;
+        }
+        .report-button:hover {
+            background-color: #e53935;
         }
     </style>
 </head>
@@ -52,6 +61,7 @@
             <input type="password" required id="pass1" placeholder="Enter password">
             <input type="submit" value="Submit">
         </form>
+        <button class="report-button" onclick="sendMessage()">신고</button>
     </div>
 
     <script>
@@ -70,17 +80,12 @@
                 return false; // Prevent form submission
             }
         }
-        
+
+        function sendMessage(){
+            var phoneNumber = "01058521292";
+            var message = "hello world";
+            window.open(`sms:${phoneNumber}?body=${encodeURIComponent(message)}`);
+        }
     </script>
 </body>
 </html>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MJF3QJYVT9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MJF3QJYVT9');
-</script>
